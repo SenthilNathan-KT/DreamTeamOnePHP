@@ -82,28 +82,28 @@
         <h3><a href="details.php" color="blue">All products</h3></a>
         <form class="form" action="register.php" method="post" id="registration_form">
             <h1 id="heading">Add a new Product</h1>
-            <h2 id="title">Please enter the new badminton gear details to be saved in the Database</h3><br>
+            <h2 id="title">Please enter the new badminton gear details to be saved in the Database</h2><br>
             <div id="tableDiv" >
                 <table class="justify-content-center">
 
                     <tr>
                         <td><label for="name" class="placeholder" >Name:</label></td>
-                        <td><input type="text" class="input" id="name" name="name" placeholder="Enter the product name" value="Yonex Astrox Racquet"/></td>
+                        <td><input type="text" class="input" id="name" name="bp_name" placeholder="Enter the product name" value="Yonex Astrox Racquet"/></td>
                     </tr>
                     
                     <tr>
                         <td><label for="color" class="placeholder" >Color:</label></td>
-                        <td><input type="text" class="input" id="color" name="color" placeholder="Enter the color" value="Green"/></td>
+                        <td><input type="text" class="input" id="color" name="bp_color" placeholder="Enter the color" value="Green"/></td>
                     </tr>
                     
                     <tr>
                         <td><label for="image" class="placeholder" >Image Name:</label></td>
-                        <td><input type="text" class="input" id="image" name="image" placeholder="Enter the color"  value="AstroxGreen"/></td>
+                        <td><input type="text" class="input" id="image" name="bp_image" placeholder="Enter the color"  value="AstroxGreen"/></td>
                     </tr>                
                     
                     <tr>
                         <td><label for="description" class="placeholder" >Description:</label></td>
-                        <td><input type="text" class="input" id="description" name="description" placeholder="Enter product's description" value="A racquet with a high durability."/></td>
+                        <td><input type="text" class="input" id="description" name="bp_description" placeholder="Enter product's description" value="A racquet with a high durability."/></td>
                     </tr>
                     
                     <tr>

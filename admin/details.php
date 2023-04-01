@@ -1,7 +1,6 @@
 <?php
-    require('./../db/db_conn.php');
-    $query = 'SELECT * FROM BadmintonProducts;';
-    $results = @mysqli_query($dbc,$query);
+require_once("./../dal/product.php");
+$results = Product::getAll();
 ?>
 <html>
     <head>
@@ -83,7 +82,7 @@
                 text-align: center;
                 Color: darkviolet;
                 text-transform: Capitalize;
-                padding-top: 20px 0;
+                padding-top: 20px;
             }
             h2 {
                 text-align: center;
@@ -124,9 +123,8 @@
                 <?php
                 
                     $sr_no = 0;
-                    while($row=mysqli_fetch_array($results, MYSQLI_ASSOC)) {
+                    while($row= $results -> fetch()) {
                         $sr_no++;
-                        // $str_to_print="<tr><td>$sr_no</td>";
                         $str_to_print="<tr><td>{$row['bp_id']}</td>";
                         $str_to_print.="<td>{$row['bp_name']}</td>";
                         $str_to_print.="<td>{$row['bp_color']}</td>";
@@ -142,50 +140,9 @@
                         
                         echo $str_to_print;
                     }
-             
                 ?>
             </tbody> 
         </table>
         <br>
-        <!--<h1>To add a new products <br>-->
-        <!--    <h2><a href="insert.php" id="link">Click here..!!</h2></a>-->
-        <!--    </h1>-->
     </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
