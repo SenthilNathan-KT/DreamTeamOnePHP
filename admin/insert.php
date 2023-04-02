@@ -1,85 +1,13 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <style>
-            #registration_form {
-                margin-top:50px;
-            }
-            
-            input {
-                border-radius:10px;
-                height: 20px;
-                margin-top: 10px;
-                color: #212529;
-                background-color: #f1c3f3;
-            }
-            
-            button {
-                background-color: #4d4ae2;
-                border-radius: 8px;
-                border-style: none;
-                box-sizing: border-box;
-                color: #FFFFFF;
-                height: 40px;
-                width: 150px;
-            }
-            
-            a {
-                border-radius: 8px;
-                height:50px;
-                width: 200px;
-            }
-            
-            label {
-                color: #d30064;
-                font-weight: bold;
-                font-size:20px;
-                
-            }
-            
-            #title {
-                color: #0900d3;
-                font-weight: bold;
-                text-transform: capitalize;
-            }
-            
-            #heading {
-                color: darkviolet;
-                font-weight: bold;
-                text-transform: capitalize;
-            }
-            
-            body {
-                height:100%;
-                /*background: linear-gradient(to bottom, rgb(100 100 100 / 80%) 0%, rgb(123 119 158 / 80%) 10%), url(./images/badminton.jpeg); background-size:cover;background-repeat: no-repeat;background-position: center center;*/
-                background: rgb(189, 220, 240);
-                text-align:center
-            }
-            
-            
-            tr{
-                text-align:left;
-              
-            }
-            
-            td{
-                padding-left:15px;
-            }
-            
-            #tableDiv {
-                margin-left:150px;
-            }
-            h3 {
-                text-align: left;
-                text-transform: Capitalize;
-            }
-            h3 a {
-                color: #2f3be0;
-            }
-        </style>
+        <meta charset="UTF-8">
+        <title>Insert Gear</title>
+        <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@1.*/css/pico.min.css">
+        <link rel="stylesheet" href="./../css/custom.css">
     </head>
     <body>
-        <h3><a href="details.php" color="blue">All products</h3></a>
+        <h3><a href="details.php">All products</h3></a>
         <form class="form" action="register.php" method="post" id="registration_form">
             <h1 id="heading">Add a new Product</h1>
             <h2 id="title">Please enter the new badminton gear details to be saved in the Database</h2><br>

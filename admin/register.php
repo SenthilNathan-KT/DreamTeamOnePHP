@@ -1,13 +1,9 @@
 <html>
 <head>
-    <style>
-
-        body {
-            height: 100%;
-            background: #aaaaa0;
-            text-align: center;
-        }
-    </style>
+    <meta charset="UTF-8">
+    <title>Insert Product</title>
+    <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@1.*/css/pico.min.css">
+    <link rel="stylesheet" href="./../css/custom.css">
 </head>
 <body>
 <h2 style="color:Red">Following error occurred while trying to add the new badminton gear.</h2>
