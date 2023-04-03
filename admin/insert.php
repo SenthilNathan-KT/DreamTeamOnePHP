@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<html>
-    <head>
+<html lang="en" data-theme="light">
+<head>
         <meta charset="UTF-8">
         <title>Insert Gear</title>
         <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@1.*/css/pico.min.css">

@@ -2,10 +2,10 @@
 require_once("./../dal/product.php");
 $results = Product::getAll();
 ?>
-<html>
+<html lang="en" data-theme="light">
 <head>
     <meta charset="UTF-8">
-    <title>Product Details</title>
+    <title>Admin</title>
     <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@1.*/css/pico.min.css">
     <link rel="stylesheet" href="./../css/custom.css">
 </head>

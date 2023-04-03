@@ -18,7 +18,7 @@ $product->findById($product->getBpId());
 
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="en" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <title>Update Gear</title>
