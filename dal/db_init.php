@@ -4,9 +4,9 @@
 <?php
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    define("INITIALIZING_DATABASE",1);
     require_once("db_conn.php");
     DBHelper::initializeDatabase();
-    echo "<h3>Database Initialized</h3>";
 }
 ?>
 <form method="POST">

@@ -2,8 +2,10 @@
 require_once("./../dal/product.php");
 require_once("./functions.inc.php");
 $results = Product::getAll();
+redirectIfNotLoggedIn();
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+  redirectIfNotLoggedIn();
     if (isset($_POST['bp_id_to_add'])) {
         addToCart($_POST['bp_id_to_add']);
     }
@@ -35,6 +37,10 @@ if (isset($_GET['sort-by'])) {
 </head>
 <body>
 <nav>
+  <?php
+    // Do something with the object
+    echo $_SESSION["user_data"]["imageName"];
+  ?>
     <ul>
         <li>
             <h1>Badminton Products</h1>
@@ -56,8 +62,13 @@ if (isset($_GET['sort-by'])) {
             </details>
         </li>
         <li>
-            <a href="./cart.php" role="button"
-            >Cart</a>
+            <a href="./cart.php" role="button">Cart</a>
+        </li>
+        <li>
+            <a href="./logout.php">Logout</a>
+        </li>
+        <li>
+          <img style="height: 65px; width: 65px; border-radius: 32px" src="./../images/<?php echo $_SESSION['user_data']['imageName']; ?>"alt="Display Picture">
         </li>
     </ul>
 </nav>

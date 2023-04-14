@@ -1,6 +1,7 @@
 <?php
 require_once("./../dal/product.php");
 require_once("./functions.inc.php");
+redirectIfNotLoggedIn();
 
 
 // Handle the form submission
@@ -56,6 +57,12 @@ $total = $subtotal + $tax;
                 <a href="./checkout.php">Checkout</a>
             </li>
         <?php endif; ?>
+        <li>
+            <a href="./logout.php">Logout</a>
+        </li>
+        <!-- <li>
+            <a href="./products.php">Products</a>
+        </li> -->
     </ul>
 </nav>
 <div class="container">
