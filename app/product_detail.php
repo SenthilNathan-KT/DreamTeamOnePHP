@@ -1,6 +1,7 @@
 <?php
 require_once("./../dal/product.php");
 require_once("./functions.inc.php");
+redirectIfNotLoggedIn();
 $product = new Product();
 $product->setBpId($_GET["bp_id"]);
 

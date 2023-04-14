@@ -1,5 +1,7 @@
 <?php
 require_once("./../dal/product.php");
+require_once("../app/functions.inc.php");
+redirectIfNotAdmin();
 
 $product = new Product();
 $product->setBpId($_GET["bp_id"]);

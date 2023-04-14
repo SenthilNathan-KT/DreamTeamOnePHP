@@ -1,5 +1,7 @@
 <?php
 require_once("./../dal/product.php");
+require_once("../app/functions.inc.php");
+redirectIfNotAdmin();
 $results = Product::getAll();
 ?>
 <html lang="en" data-theme="light">
@@ -19,6 +21,9 @@ $results = Product::getAll();
     <ul>
         <li>
             <a href="insert.php">Add product</a>
+        </li>
+        <li>
+            <a href="../app/logout.php">Logout</a>
         </li>
     </ul>
 </nav><!-- ./ Nav -->

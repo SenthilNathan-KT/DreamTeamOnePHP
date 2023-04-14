@@ -22,8 +22,12 @@ class DBHelper
     static function initializeDatabase(): void
     {
         try {
-            self::loadConfig();
+            // self::loadConfig();
+            if(defined("INITIALIZING_DATABASE"))
+            $data_source_name = "mysql:host=".self::$dbHost.";charset=".self::DB_CHARSET;
+        else
             $data_source_name = "mysql:host=" . self::$dbHost . ";dbname=" . self::DB_NAME . ";charset=" . self::DB_CHARSET;
+            
             $pdo = new PDO($data_source_name, self::$dbUser, self::$dbPass);
 
             $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -54,19 +58,23 @@ class DBHelper
                                 ('Yonex BG65 Racquet String', 'White', 'BG65White', 'The Yonex BG65 Racquet String in white is an ideal choice for any badminton player looking for a durable, high-performance string. Made from a blend of high-quality nylon and polyurethane, this string is designed to provide exceptional durability, as well as enhanced repulsion and control. The white color of the string gives it a sleek, professional look on the court.\\nWith a thickness of 0.70mm, the Yonex BG65 string strikes a perfect balance between power and control. It provides enough power to help you hit powerful smashes and clears, while also giving you enough control to execute accurate drop shots and net shots. The string also has a high tension holding capability, allowing you to maintain your desired tension for a longer period of time.\\nThe Yonex BG65 string is perfect for players who prefer a faster game and want their racquet to have a more responsive feel. This string is suitable for both amateur and professional players, and its high-quality construction makes it a popular choice among badminton enthusiasts worldwide.', 75, 11.78,'Senthil');"
             );
 
-            $pdo->query("CREATE TABLE User (
+            $pdo->query("CREATE TABLE user (
                         user_id mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
-                        username varchar(255) NOT NULL,
-                        password varchar(255) NOT NULL,
-                        user_type ENUM('Admin','User') DEFAULT 'USER',
+                        firstName varchar(255) NOT NULL,
+                        lastName varchar(255) NOT NULL,
+                        email varchar(255) NOT NULL,
+                        imageName varchar(255) NOT NULL,
+                        passwordHash varchar(255) NOT NULL,
+                        user_type ENUM('Admin','User') DEFAULT 'User',
                         PRIMARY KEY(user_id)
                     ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4");
 
+            $hashAdmin=password_hash("admin",PASSWORD_DEFAULT);
+            
             $pdo->query(
-                "INSERT INTO User (username, password, user_type) VALUES
-                                ('Admin', 'Admin', 'Admin'),
-                                ('User1', 'User1', 'User'),
-                                ('User2', 'User2', 'User');");
+                "INSERT INTO user(firstName,lastName,email,passwordHash,user_type, imageName)
+                 values
+                ('Nikhil','Bathula','admin@gmail.com','$hashAdmin', 'Admin', '')");
 
             echo "<h3> Database Initialized</h3>";
         } catch (PDOException $e) {

@@ -1,3 +1,7 @@
+<?php
+require_once("../app/functions.inc.php");
+redirectIfNotAdmin();
+?>
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
 <head>
